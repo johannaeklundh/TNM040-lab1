@@ -27,24 +27,53 @@
 .App-link {
   color: #61dafb;
 }
+.search {
+  margin: 1vw;
+}
 
+input {
+  height: 30px;
+  font-size: 25px;
+}
 .name {
   font-weight: bold;
   font-size: 20px;
 }
 
 .bar {
-  height: 10px;
+  height: 5px;
   padding: 10px;
   background-color: indigo;
+  border-radius: 5px;
 }
 
 .div {
   padding: 10px;
 }
 
+.search {
+  padding-left: 1%;
+  font-size: 25px;
+}
+.column1 {
+  float: left;
+  width: 49%;
+  padding: 0.5%;
+}
+
+.column2 {
+  float: right;
+  width: 49%;
+  padding: 0.5%;
+}
+
+.detailed {
+  padding-top: 1%;
+  padding-bottom: 1.66%;
+}
+
 .div:nth-child(odd) {
-  background-color: violet;
+  background-color: #f4e6ff;
 }
 
 @keyframes App-logo-spin {

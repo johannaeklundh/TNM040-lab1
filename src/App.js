@@ -3,45 +3,42 @@ import "./App.css";
 import countries from "world-countries";
 import CountryInfo from "./CountryInfo";
 import { useState } from "react";
+import { ReactDOM } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  //console.log(countries[0])
-  //sorting countries by area
-
-  /*let holder = countries.sort((a, b) => b.area - a.area);
-  //Removing Antarctica from list
-  let filtered = holder.filter((arg) => arg.name.common !== "Antarctica");
-  // selecting the first 15 countries
-  let sliced = filtered.slice(0, 15);
-*/
   const [searchString, setSearchString] = useState("");
-  // Creating a countrylist
+  //sort countries by area
+  let holder = countries.sort((a, b) => b.area - a.area);
+
+  // set input to searchstring
   function change(event) {
     setSearchString(event.target.value);
   }
-  console.log(searchString);
 
+  // match countries to the searched word
   const matchSearch = (word) => {
-    const lowerCaseWord = word.toLowerCase();
+    const lowerCaseWord = word.name.common.toLowerCase();
     const lowerCaseSearchString = searchString.toLowerCase();
-
     // What is the '0' representing? What happens if you change it to '1'?
     return lowerCaseWord.indexOf(lowerCaseSearchString) === 0;
   };
 
-  let holder = countries.sort((a, b) => b.area - a.area);
-  //let holdereName = holder.data.name.common;
+  //Filter the matched word
   const filteredWords = holder.filter(matchSearch);
+
+  // slice to get to columns
   let sliced = filteredWords.slice(0, 15);
   let sliced5 = sliced.slice(0, 5);
   let sliced10 = sliced.slice(5, 15);
+
   //console.log(filteredWords);
-  console.log(matchSearch);
+  //console.log(matchSearch);
 
   return (
     // Calling the funciton
     <div>
-      <div>
+      <div className="search">
         <h1>Sök</h1>
         <input type="text" placeholder="Type here..." onChange={change} />
         <p></p>
@@ -58,6 +55,13 @@ function App() {
       </div>
     </div>
   );
+}
+function a() {
+  return <div></div>;
+}
+
+function CountryDetails() {
+  return <div>Hello World</div>;
 }
 
 export default App;

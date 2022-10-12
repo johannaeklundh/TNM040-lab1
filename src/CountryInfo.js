@@ -6,6 +6,7 @@ const CountryInfo = ({ data, detailed }) => {
 
   let ratio = Area / 17098242;
   let widthBar = ratio * 98 + "%";
+
   return (
     <div className="div">
       <span className="name">{Name}</span> {Area} km<sup>2</sup>
